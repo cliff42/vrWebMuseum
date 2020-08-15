@@ -1,0 +1,64 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Fabric_WH
+Ka 0.000000 0.000000 0.000000
+Kd 0.600000 0.600000 0.600000
+Ks 0.330000 0.330000 0.330000
+map_Kd Google_home/Fabric_WH.jpg
+
+newmtl google_home_WH
+Ka 0.000000 0.000000 0.000000
+Kd 0.933333 0.933333 0.933333
+Ks 0.330000 0.330000 0.330000
+
+newmtl google_home_Button1
+Ka 0.000000 0.000000 0.000000
+Kd 0.941176 0.941176 0.941176
+Ks 0.330000 0.330000 0.330000
+map_Kd Google_home/google_home_Button1.jpg
+
+newmtl google_home_lamp_BL
+Ka 0.000000 0.000000 0.000000
+Kd 0.400000 0.800000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl google_home_lamp_YLW
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 0.400000
+Ks 0.330000 0.330000 0.330000
+
+newmtl google_home_lamp_RED
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.400000 0.400000
+Ks 0.330000 0.330000 0.330000
+
+newmtl google_home_lamp_GR
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 1.000000 0.501961
+Ks 0.330000 0.330000 0.330000
+
+newmtl google_home_BK
+Ka 0.000000 0.000000 0.000000
+Kd 0.200000 0.200000 0.200000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Fabric_Violet
+Ka 0.000000 0.000000 0.000000
+Kd 0.305882 0.027451 0.521569
+Ks 0.330000 0.330000 0.330000
+map_Kd Google_home/Fabric_Violet.jpg
+
+newmtl Fabric_Marine
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.556863 0.474510
+Ks 0.330000 0.330000 0.330000
+map_Kd Google_home/Fabric_Marine.jpg
+
+newmtl Fabric_Mango
+Ka 0.000000 0.000000 0.000000
+Kd 0.729412 0.376471 0.129412
+Ks 0.330000 0.330000 0.330000
+map_Kd Google_home/Fabric_Mango.jpg
+

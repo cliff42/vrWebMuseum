@@ -1,0 +1,374 @@
+<head>
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<script>
+  AFRAME.registerComponent('foo', {
+    init: function() {
+      this.el.addEventListener('mouseenter', (e) => {
+        document.getElementById('cursor').setAttribute('color', "#66ff00");
+        this.el.children[0].setAttribute('visible', 'true');
+      })
+      this.el.addEventListener('mouseleave', (e) => {
+        document.getElementById('cursor').setAttribute('color', "black");
+        this.el.children[0].setAttribute('visible', 'false');
+      })
+    }
+  })
+</script>
+    
+<script>
+  AFRAME.registerComponent('moveleft', {
+    init: function() {
+      this.el.addEventListener('mouseenter', (e) => {
+       var camera = document.getElementById('rig');
+          var posx = camera.object3D.position.x;
+          var posy = camera.object3D.position.y;
+          var posz = camera.object3D.position.z;
+        camera.object3D.position.set(posx - 1.5, posy, posz);
+          var leftarrow = document.getElementById('leftarrow');
+          posx = leftarrow.object3D.position.x;
+          posy = leftarrow.object3D.position.y;
+          posz = leftarrow.object3D.position.z;
+        leftarrow.object3D.position.set(posx - 1.5, posy, posz);
+          var rightarrow = document.getElementById('rightarrow');
+          posx = rightarrow.object3D.position.x;
+          posy = rightarrow.object3D.position.y;
+          posz = rightarrow.object3D.position.z;
+        rightarrow.object3D.position.set(posx - 1.5, posy, posz);
+         document.getElementById('cursor').setAttribute('color', "#66ff00");
+      }) 
+        this.el.addEventListener('mouseleave', (e) => {
+            document.getElementById('cursor').setAttribute('color', "black");
+        })
+    }
+  })
+</script>
+    
+<script>
+  AFRAME.registerComponent('moveright', {
+    init: function() {
+      this.el.addEventListener('mouseenter', (e) => {
+       var camera = document.getElementById('rig');
+          var posx = camera.object3D.position.x;
+          var posy = camera.object3D.position.y;
+          var posz = camera.object3D.position.z;
+        camera.object3D.position.set(posx + 1.5, posy, posz);
+          var leftarrow = document.getElementById('leftarrow');
+          posx = leftarrow.object3D.position.x;
+          posy = leftarrow.object3D.position.y;
+          posz = leftarrow.object3D.position.z;
+        leftarrow.object3D.position.set(posx + 1.5, posy, posz);
+          var rightarrow = document.getElementById('rightarrow');
+          posx = rightarrow.object3D.position.x;
+          posy = rightarrow.object3D.position.y;
+          posz = rightarrow.object3D.position.z;
+        rightarrow.object3D.position.set(posx + 1.5, posy, posz);
+         
+          document.getElementById('cursor').setAttribute('color', "#66ff00");
+      })
+        this.el.addEventListener('mouseleave', (e) => {
+            document.getElementById('cursor').setAttribute('color', "black");
+        })
+    }
+  })
+</script>
+    
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="nextCubeObj" src="assets/NeXTCube%20OBJ.obj"></a-asset-item>
+            <a-asset-item id="nextCubeMtl" src="assets/NeXTCube%20OBJ.mtl"></a-asset-item>
+            
+            <a-asset-item id="deepBlueObj" src="assets/IBM_RS6000_Deep_Blue.obj"></a-asset-item>
+            
+            <a-asset-item id="deepBlueMtl" src="assets/IBM_RS6000_Deep_Blue.mtl"></a-asset-item>
+            
+            <a-asset-item id ="powerBook" src="/assets/Archive2/ed353431-94a2-415c-87cf-83b223c74b59/PowerBook+150.gltf"></a-asset-item>
+            
+            <a-asset-item id="newtonObj" src="assets/Apple+Newton+MessagePad+2000.obj"></a-asset-item>
+            
+            <a-asset-item id="newtonMtl" src="assets/Apple+Newton+MessagePad+2000.mtl"></a-asset-item>
+            
+            <a-asset-item id="windows98Obj" src="assets/Speedmaster+120+98+(Windows+98)+desktop+(90s+computing)+By+Mario+D.+2+alternate+color+schemes.obj"></a-asset-item>
+            
+            <a-asset-item id="windows98Mtl" src="assets/Speedmaster+120+98+(Windows+98)+desktop+(90s+computing)+By+Mario+D.+2+alternate+color+schemes.mtl"></a-asset-item>
+            
+            <a-asset-item id="skullTest" src="assets/skull_downloadable/scene.gltf"></a-asset-item>
+            
+            <a-asset-item id="stand" 
+                          src="assets/pedestal/scene.gltf"></a-asset-item>
+            
+            <a-asset-item id="thinkPadObj" src="assets/Lenovo%20IBm%20ThinkPad.obj"></a-asset-item>
+            
+            <a-asset-item id="thinkPadMtl" src="assets/Lenovo%20IBm%20ThinkPad.mtl"></a-asset-item>
+            
+            <a-asset-item id="iphoneObj" src="assets/iPhone.obj"></a-asset-item>
+            
+            <a-asset-item id="iphoneMtl" src="assets/iPhone.mtl"></a-asset-item>
+            
+            <a-asset-item id="bitcoinObj" src="assets/Bitcoin.obj"></a-asset-item>
+            
+            <a-asset-item id="bitcoinMtl" src="assets/Bitcoin.mtl"></a-asset-item>
+            
+            <a-asset-item id="googlehomObj" src="assets/Google_home.obj"></a-asset-item>
+            
+            <a-asset-item id="googlehomeMtl" src="assets/Google_home.mtl"></a-asset-item>
+            
+            <img id="googlehomeText" src="assets/popupDialouges/googlehomeText.png">
+            
+            <img id="iphoneText" src="assets/popupDialouges/iphoneText.png">
+            
+            <img id="cloudcomp" src="assets/cloudComp.png">
+            
+            <img id ="cloudcompText" src="assets/popupDialouges/cloudText.png">
+      
+            <img id="mosaicScreen" src="assets/mosaic.png">
+            
+            <img id="netscapeScreen" src="assets/netscape.png">
+            
+            <img id="cernSite" src="assets/firstCernSite.jpeg">
+            
+            <img id="yahoo" src="assets/firstYahoo.png">
+            
+            <img id="90sWeb" src="assets/90Internet.png">
+            
+            <img id="firstGoogle" src="assets/firstGoogle.png">
+            
+            <img id="dotCom" src="assets/dotcomburst.png">
+            
+            <img id="03Web" src="assets/03Web.png">
+            
+            <img id="04Web" src=assets/Web04.png>
+            
+            <img id="05Web" src=assets/05Web.png>
+      
+            <img id="groundTexture" src="assets/Seamless%20floor%20concrete%20stone%20block%20tiles%20texture.jpg">
+            
+            <img id="arrow" src="assets/arrow.png">
+            
+            <img id="info" src="assets/infoButton.png">
+            
+            <img id="nextcubeText" src="assets/popupDialouges/nextCubeText.png">
+            
+            <img id="firstcernText" src="assets/popupDialouges/firstCERNWebsiteText.png">
+            
+            <img id="powerbookText" src="assets/popupDialouges/powerBookText.png">
+            
+            <img id="mosaicText" src="assets/popupDialouges/mosaicText.png">
+            
+            <img id="appleNewtonText" src="assets/popupDialouges/appleNewtonText.png">
+            
+            <img id="netscapeText" src="assets/popupDialouges/netscapeText.png">
+            
+            <img id="yahooText" src="assets/popupDialouges/yahooText.png">
+            
+            <img id="90sWebText" src="assets/popupDialouges/90sWebText.png">
+            
+            <img id="deepblueText" src="assets/popupDialouges/deepblueText.png">
+            
+            <img id="firstgoogleText" src="assets/popupDialouges/googleText.png">
+            
+            <img id="dotcomText" src="assets/popupDialouges/dotcomText.png">
+            
+            <img id="03WebText" src="assets/popupDialouges/newWeb03.png">
+            
+            <img id="04WebText" src="assets/popupDialouges/web04Text.png">
+            
+            <img id="thinkpadText" src="assets/popupDialouges/thinkpadText.png">
+            
+            <img id="05WebText" src="assets/popupDialouges/web05Text.png">
+            
+            <img id="bitcoinText" src="assets/popupDialouges/bitcoinText.png">
+        
+        </a-assets>
+        
+<!--        Camera-->
+        <a-entity id="rig" position="-10 0 0">
+             <a-camera position="0 1.6 3">
+            <a-cursor id="cursor" color="black" position="0 0 -1"></a-cursor>
+        </a-camera></a-entity>
+        
+<!--        NextCube-->
+        
+        <a-obj-model src="#nextCubeObj" mtl="#nextCubeMtl" position="-10.5 1.2 -1.2" scale="0.1 0.1 0.1">
+                <a-gltf-model src="#stand" position="7 -23 -8" scale="2 2 2"></a-gltf-model>
+                <a-image src="#info" scale="4 4 4" position="7 -9 -2" foo>
+                    <a-image src="#nextcubeText" scale="6 2 1" visible="false" position="0 0 1"></a-image>
+                </a-image>
+        </a-obj-model>
+        
+<!--        CERN Website-->
+        
+        <a-image src="#cernSite" scale="2 2 2" position="-7 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#firstcernText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        PowerBook-->
+        
+        <a-gltf-model src="#powerBook" scale="0.001 0.001 0.001" rotation="270 0 0" position="-4.8 1.25 -1.45">
+            <a-gltf-model src="#stand" position="600 550 -2350" rotation="-270 0 0" scale="200 200 200"></a-gltf-model>
+            <a-image src="#info" scale="400 400 400" position="600 -80 -950" rotation="90 180 180" foo>
+                <a-image src="#powerbookText" scale="7 3 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-gltf-model>
+        
+<!--        SunDisk-->
+        
+<!--        Mosaic-->
+        
+        <a-image src="#mosaicScreen" scale="2 2 2" position="-1.4 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#mosaicText" scale="7 2 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        Apple Newton-->
+        
+        <a-obj-model src="#newtonObj" mtl="#newtonMtl" scale="0.1 0.1 0.1" rotation="90 0 0" position="1 1.22 -2">
+            <a-gltf-model src="#stand" scale="2 2 2" rotation="-90 0 0" position="3.5 0 23.2"></a-gltf-model>
+            <a-image src="#info" rotation="270 180 180" scale="4 4 4" position="3.5 6 9.5" foo>
+                <a-image src="#appleNewtonText" scale="7 2 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-obj-model>
+        
+<!--        NetScape-->
+        
+        <a-image src="#netscapeScreen" scale="2 2 2" position="4 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#netscapeText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        Yahoo-->
+        
+        <a-image src="#yahoo" scale="2 2 2" position="6.7 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#yahooText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        Amazon/ Ebay/ Craigslist-->
+        
+        <a-image src="#90sWeb" scale="2 2 2" position="9.4 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#90sWebText" scale="7 1.5 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        Deep Blue-->
+        
+        <a-obj-model src="#deepBlueObj" mtl="#deepBlueMtl" scale="0.015 0.015 0.015" position="11.8 1.2 -2.651" rotation="0 -90 0">
+            <a-gltf-model src="#stand" scale="13 13 13" position="45 -150 -20"></a-gltf-model>
+            <a-image src="#info" scale="25 25 40" position="85 -60 -20" rotation="0 90 0" foo>
+                <a-image src="#deepblueText" scale="6 2 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-obj-model>
+        
+<!--        Windows 98-->
+        
+<!--        Google -->
+        
+        <a-image src="#firstGoogle" scale="2 2 2" position="14.7 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#firstgoogleText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        .com Burst-->
+        
+        <a-image src="#dotCom" scale="2 2 2" position="17.4 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#dotcomText" scale="7 1.5 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        2003 Internet-->
+        
+        <a-image src="#03Web" scale="2 2 2" position="20.2 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#03WebText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        2004 Internet-->
+        <a-image src="#04Web" scale="2 2 2" position="23 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#04WebText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+<!--        Thinkpad-->
+        
+        <a-obj-model src="#thinkPadObj" mtl="#thinkPadMtl" scale="0.1 0.1 0.1" position="25.3 1.3 -1.5">
+            <a-gltf-model src="#stand" scale="2 2 2" position="5 -24 -5"></a-gltf-model>
+            <a-image src="#info" scale="4 4 4" position="5 -10 1" foo>
+                <a-image src="#thinkpadText" scale="6 2 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-obj-model>
+        
+<!--        2005 Internet-->
+        <a-image src="#05Web" scale="2 2 2" position="28.6 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#05WebText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+        
+<!--        2006 cloud-->
+        <a-image src="#cloudcomp" scale="2 2 2" position="31.3 2.5 -2">
+            <a-gltf-model src="#stand" position="0 -1.8 0" scale="0.1 0.1 0.1"></a-gltf-model>
+            <a-image src="#info" scale="0.2 0.2 0.2" position="0 -1.1 0.3" foo>
+                <a-image src="#cloudcompText" scale="7 1 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-image>
+<!--        iPhone-->
+        
+        <a-obj-model src="#iphoneObj" mtl="#iphoneMtl" scale="0.001 0.001 0.001" rotation="90 0 0" position="33.8 1.5 -2">
+            <a-gltf-model src="#stand" scale="200 200 200" rotation="-90 0 0" position="250 0 2600"></a-gltf-model>
+            <a-image src="#info" scale="400 400 400" position="250 600 1200" rotation="270 0 0" foo>
+                <a-image src="#iphoneText" scale="7 1.5 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-obj-model>
+        
+<!--        bitcoin -->
+        
+        <a-obj-model src="#bitcoinObj" mtl="#bitcoinMtl" rotation="90 0 0" scale="0.2 0.2 0.2" position="36.3 1.5 -2">
+            <a-gltf-model src="#stand" rotation="-90 0 0" position="2.5 0 13"></a-gltf-model>
+            <a-image src="#info" scale="2 2 2" position="2.5 3 6" rotation="270 0 0" foo>
+                <a-image src="#bitcoinText" scale="6 1" visible="false" position="0 0.4 1"></a-image>
+            </a-image>
+        </a-obj-model>
+        
+<!--        Utils-->
+        
+        <a-image src="#arrow" id="rightarrow" position="-9.4 0 0" rotation="90 0 0" moveright></a-image>
+        
+        <a-image src="#arrow" id="leftarrow" position="-10.6 0 0" rotation="90 0 180" moveleft>
+        </a-image>
+
+        <a-plane src="#groundTexture" position="0 -1 0" rotation="-90 0 0" repeat="10 10" scale="100 100 100"></a-plane>
+    
+        <a-sky color="#222"></a-sky>
+        
+ 
+    
+        
+<!--
+        <a-entity camera look-controls wasd-controls>
+            <a-cursor id="cursor"></a-cursor>
+        </a-entity>
+-->
+    </a-scene>
+</body>

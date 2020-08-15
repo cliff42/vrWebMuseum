@@ -1,0 +1,21 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl ipf
+Ka 0.000000 0.000000 0.000000
+Kd 0.231373 0.247059 0.239216
+Ks 0.330000 0.330000 0.330000
+map_Kd iPhone/ipf.jpg
+
+newmtl ipb
+Ka 0.000000 0.000000 0.000000
+Kd 0.533333 0.533333 0.545098
+Ks 0.330000 0.330000 0.330000
+map_Kd iPhone/ipb.jpg
+
+newmtl Color_009
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
